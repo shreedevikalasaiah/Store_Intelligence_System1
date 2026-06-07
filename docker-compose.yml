@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: store_intelligence_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
